@@ -77,10 +77,19 @@ namespace App4.Modelos
         }
 
         // método para verificar se é possível a matrícula do aluno na disciplina
-        public bool Matricular(Disciplina disciplina)
+        public int Matricular(Disciplina disciplina)
         {
-            // retorna se o período é igual ao semestre da disciplina
-            return this.Periodo == disciplina.Semestre;
+            // verificar disciplina em atraso
+            if (disciplina.Semestre < this.periodo)
+            {
+                // retorna a soma do semestre da disciplina com a quantidade que falta para se formar
+                return (disciplina.Semestre + this.formatura);
+            }
+            else
+            {
+                // retorna p semestre da disciplina
+                return disciplina.Semestre;
+            }
         }
 
         // método para verificar se é possível a matrícula do aluno na disciplina
