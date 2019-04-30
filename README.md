@@ -1,2 +1,2 @@
 # App4
-3.1 - Encapsulamento de classes
+Exercício 3.1 - Encapsulamento de classes
